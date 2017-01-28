@@ -1,0 +1,2149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FTMClass</class>
+ <widget class="QMainWindow" name="FTMClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1231</width>
+    <height>817</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>FTM</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1231</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="actionAbrir_PVM"/>
+    <addaction name="actionAbrir_FTs"/>
+    <addaction name="actionAbrir_TexturasVol"/>
+    <addaction name="separator"/>
+    <addaction name="actionGuardar_FTs"/>
+    <addaction name="actionGuardar_TexturasVol"/>
+   </widget>
+   <widget class="QMenu" name="menuEditar">
+    <property name="title">
+     <string>Editar</string>
+    </property>
+    <widget class="QMenu" name="menuBox">
+     <property name="title">
+      <string>Box</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>iconos/box.jpeg</normaloff>iconos/box.jpeg</iconset>
+     </property>
+     <addaction name="actionMostrarBox"/>
+     <addaction name="actionColorBox"/>
+    </widget>
+    <widget class="QMenu" name="menuFTM">
+     <property name="title">
+      <string>FTM</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>iconos/FTMul.gif</normaloff>iconos/FTMul.gif</iconset>
+     </property>
+     <addaction name="actionMostrarFTM"/>
+     <addaction name="actionMostrar_WidgetFTM"/>
+    </widget>
+    <widget class="QMenu" name="menuFiltros">
+     <property name="title">
+      <string>Filtros</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>iconos/filtro.gif</normaloff>iconos/filtro.gif</iconset>
+     </property>
+     <widget class="QMenu" name="menuTipo_Seg_Der">
+      <property name="title">
+       <string>Tipo Seg. Der.</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>iconos/segundaDer.gif</normaloff>iconos/segundaDer.gif</iconset>
+      </property>
+      <addaction name="actionLaplaciano"/>
+      <addaction name="actionGrad_del_Grad"/>
+      <addaction name="actionM_Hessian"/>
+     </widget>
+     <addaction name="menuTipo_Seg_Der"/>
+     <addaction name="actionDif_Centrales"/>
+     <addaction name="actionKernels"/>
+     <addaction name="actionPropiedades"/>
+    </widget>
+    <widget class="QMenu" name="menuVolumen">
+     <property name="title">
+      <string>Volumen</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>iconos/vol.gif</normaloff>iconos/vol.gif</iconset>
+     </property>
+     <addaction name="actionPropiedadesVol"/>
+    </widget>
+    <widget class="QMenu" name="menuIluminaci_n">
+     <property name="title">
+      <string>Iluminación</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>iconos/ilu.jpeg</normaloff>iconos/ilu.jpeg</iconset>
+     </property>
+     <addaction name="actionActivarIlu"/>
+     <addaction name="actionMoverIlu"/>
+     <addaction name="actionPropiedadesIlu"/>
+    </widget>
+    <widget class="QMenu" name="menuFT_Uni">
+     <property name="title">
+      <string>FT Uni</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>iconos/FTUni.gif</normaloff>iconos/FTUni.gif</iconset>
+     </property>
+     <addaction name="actionMostrar_WidgetFTuni"/>
+    </widget>
+    <addaction name="menuFT_Uni"/>
+    <addaction name="menuFTM"/>
+    <addaction name="menuFiltros"/>
+    <addaction name="menuVolumen"/>
+    <addaction name="menuBox"/>
+    <addaction name="menuIluminaci_n"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+   <addaction name="menuEditar"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string>border-top-color: rgb(62, 62, 62);</string>
+   </property>
+   <property name="sizeGripEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_3">
+   <property name="minimumSize">
+    <size>
+     <width>300</width>
+     <height>322</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-bottom-color: rgb(0, 0, 0);</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetFT">
+    <property name="minimumSize">
+     <size>
+      <width>300</width>
+      <height>300</height>
+     </size>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <widget class="QGroupBox" name="ConFigClasi">
+     <property name="geometry">
+      <rect>
+       <x>950</x>
+       <y>0</y>
+       <width>278</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>Conf. Fig.</string>
+     </property>
+     <widget class="conFigClasi" name="widgetSetFigClasi" native="true">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>50</y>
+        <width>211</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QSlider" name="sliderConFigFin">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>211</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QSlider" name="sliderConFigIni">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>211</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="sliderPosition">
+       <number>99</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="invertedAppearance">
+       <bool>false</bool>
+      </property>
+      <property name="invertedControls">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="colorLabel" name="pColorConf1">
+      <property name="geometry">
+       <rect>
+        <x>6</x>
+        <y>20</y>
+        <width>21</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string>C1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="margin">
+       <number>1</number>
+      </property>
+     </widget>
+     <widget class="colorLabel" name="pColorConf2">
+      <property name="geometry">
+       <rect>
+        <x>246</x>
+        <y>20</y>
+        <width>21</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string>C2</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="margin">
+       <number>1</number>
+      </property>
+     </widget>
+     <widget class="QSlider" name="sliderAlphaFin">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>14</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>255</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QSlider" name="sliderAlphaIni">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>60</y>
+        <width>14</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>255</number>
+      </property>
+      <property name="value">
+       <number>255</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>0</y>
+       <width>301</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Lista Fig.</string>
+     </property>
+     <widget class="QTableWidget" name="tablaFigClasi">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>32</y>
+        <width>271</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="cornerButtonEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="columnCount">
+       <number>3</number>
+      </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>20</number>
+      </attribute>
+      <attribute name="verticalHeaderHighlightSections">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderMinimumSectionSize">
+       <number>20</number>
+      </attribute>
+      <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Figura</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nombre</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Estado</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="crearFigClasi">
+      <property name="geometry">
+       <rect>
+        <x>18</x>
+        <y>272</y>
+        <width>41</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>iconos/crear_fig.gif</normaloff>iconos/crear_fig.gif</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="eliminarFigClasi">
+      <property name="geometry">
+       <rect>
+        <x>58</x>
+        <y>272</y>
+        <width>41</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>iconos/eliminar_fig.gif</normaloff>iconos/eliminar_fig.gif</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="subirFigClasi">
+      <property name="geometry">
+       <rect>
+        <x>206</x>
+        <y>10</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>iconos/hacia_arriba.gif</normaloff>iconos/hacia_arriba.gif</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bajarFigClasi">
+      <property name="geometry">
+       <rect>
+        <x>246</x>
+        <y>10</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>iconos/hacia_abajo.gif</normaloff>iconos/hacia_abajo.gif</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="refrescarVol">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>8</y>
+        <width>24</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>iconos/refrescar.jpeg</normaloff>iconos/refrescar.jpeg</iconset>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="AutoRefresh">
+      <property name="geometry">
+       <rect>
+        <x>96</x>
+        <y>12</y>
+        <width>91</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Auto-refrescar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>4</x>
+       <y>0</y>
+       <width>626</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string> FT Multidimensional</string>
+     </property>
+     <widget class="QScrollArea" name="scrollArea_2">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>30</y>
+        <width>258</width>
+        <height>258</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="pintaFTSeg" name="AreaDrawSeg">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>256</width>
+         <height>256</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="ejeLinea" name="EjeX2" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>290</y>
+        <width>258</width>
+        <height>7</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="ejeLinea" name="EjeZ" native="true">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>30</y>
+        <width>7</width>
+        <height>258</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>258</width>
+        <height>258</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="pintaFT" name="AreaDraw">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>256</width>
+         <height>256</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <widget class="pantalla" name="pantallaWidget" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>-410</y>
+          <width>600</width>
+          <height>345</height>
+         </rect>
+        </property>
+        <property name="locale">
+         <locale language="Spanish" country="Venezuela"/>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="ejeLinea" name="EjeY" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>7</width>
+        <height>258</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="ejeLinea" name="EjeX1" native="true">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>290</y>
+        <width>258</width>
+        <height>7</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cero">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>286</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cero_2">
+      <property name="geometry">
+       <rect>
+        <x>312</x>
+        <y>286</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Push1D">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>30</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>1D</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Push2D">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>58</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>2D</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Push3D">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>86</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>3D</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidgetKernels">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <widget class="QPushButton" name="calculaKernels">
+     <property name="geometry">
+      <rect>
+       <x>54</x>
+       <y>274</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Calcular</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupSegunda">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>30</y>
+       <width>60</width>
+       <height>241</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>f´´</string>
+     </property>
+     <widget class="QListWidget" name="listSegunda">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>20</y>
+        <width>42</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>-0.140</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.812</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.593</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>-2.5</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.593</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.812</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>-0.140</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupPrimera">
+     <property name="geometry">
+      <rect>
+       <x>61</x>
+       <y>30</y>
+       <width>60</width>
+       <height>241</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>f´</string>
+     </property>
+     <widget class="QListWidget" name="listPrimera">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>20</y>
+        <width>42</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>0.125</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.500</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.625</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>-0.625</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>-0.500</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>-0.125</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupInterpola">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>30</y>
+       <width>60</width>
+       <height>241</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>f</string>
+     </property>
+     <widget class="QListWidget" name="listInterpola">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>20</y>
+        <width>42</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>0.062</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.250</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.437</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.5</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.437</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.250</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.062</string>
+       </property>
+       <property name="flags">
+        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QSpinBox" name="tamKernels">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>4</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>3</number>
+     </property>
+     <property name="maximum">
+      <number>11</number>
+     </property>
+     <property name="singleStep">
+      <number>2</number>
+     </property>
+     <property name="value">
+      <number>7</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>6</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tamaño:</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidgetFT1">
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_3">
+    <widget class="QGroupBox" name="groupBoxUni">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>281</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>FT Unidimensional</string>
+     </property>
+     <widget class="QScrollArea" name="scrollArea_3">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>20</y>
+        <width>258</width>
+        <height>258</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="pintaFTUni" name="AreaDrawFT1">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>256</width>
+         <height>256</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="Push1DFTUni">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>280</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>1D</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Push2Do3DFTUni">
+      <property name="geometry">
+       <rect>
+        <x>41</x>
+        <y>280</y>
+        <width>41</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>2D|3D</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidgetVol">
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <widget class="QGroupBox" name="groupBoxVol">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>-1</y>
+       <width>281</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Editar Volúmen</string>
+     </property>
+     <widget class="QLabel" name="labelTamVoxel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Valor del  Vóxel:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>22</x>
+        <y>54</y>
+        <width>46</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Min X:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>22</x>
+        <y>94</y>
+        <width>46</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Min Y:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>22</x>
+        <y>134</y>
+        <width>46</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Min Z:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>162</x>
+        <y>54</y>
+        <width>46</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Max X:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>162</x>
+        <y>94</y>
+        <width>46</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Max Y:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>162</x>
+        <y>134</y>
+        <width>46</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Max Z:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelMuestreo">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>184</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string> Muestreo del rayo:</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="sliderEscalaX">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>250</y>
+        <width>241</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="value">
+       <number>50</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QSlider" name="sliderEscalaY">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>270</y>
+        <width>241</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="value">
+       <number>50</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QSlider" name="sliderEscalaZ">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>290</y>
+        <width>241</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="value">
+       <number>50</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEditValor">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>18</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0.00001</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinMinX">
+      <property name="geometry">
+       <rect>
+        <x>58</x>
+        <y>50</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>10000</number>
+      </property>
+      <property name="value">
+       <number>1</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinMinY">
+      <property name="geometry">
+       <rect>
+        <x>58</x>
+        <y>90</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>10000</number>
+      </property>
+      <property name="value">
+       <number>1</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinMinZ">
+      <property name="geometry">
+       <rect>
+        <x>58</x>
+        <y>130</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>10000</number>
+      </property>
+      <property name="value">
+       <number>1</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinMaxX">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>50</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>10000</number>
+      </property>
+      <property name="value">
+       <number>1</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinMaxY">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>90</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>10000</number>
+      </property>
+      <property name="value">
+       <number>1</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinMaxZ">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>130</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>10000</number>
+      </property>
+      <property name="value">
+       <number>1</number>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="doubleSpinMuestreo">
+      <property name="geometry">
+       <rect>
+        <x>118</x>
+        <y>180</y>
+        <width>121</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="decimals">
+       <number>5</number>
+      </property>
+      <property name="minimum">
+       <double>0.000010000000000</double>
+      </property>
+      <property name="maximum">
+       <double>1.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.000010000000000</double>
+      </property>
+      <property name="value">
+       <double>0.050000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>220</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Escalar Volúmen</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="x">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>21</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>X</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="y">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>270</y>
+        <width>21</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Y</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="z">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>290</y>
+        <width>21</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Z</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBoxFTMWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>320</y>
+       <width>281</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>FTM Histograma 2D</string>
+     </property>
+     <widget class="QSlider" name="sliderTruncaFTMWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>44</y>
+        <width>264</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>255</number>
+      </property>
+      <property name="maximum">
+       <number>10000</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinMaxFTMhisto2D">
+      <property name="geometry">
+       <rect>
+        <x>216</x>
+        <y>16</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>255</number>
+      </property>
+      <property name="maximum">
+       <number>2147483647</number>
+      </property>
+      <property name="value">
+       <number>10000</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinMinFTMhisto2D">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>16</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>2147483647</number>
+      </property>
+      <property name="value">
+       <number>255</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelActualValorHistoFTM">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>62</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nro Actual:</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinActualFTMhisto2D">
+      <property name="geometry">
+       <rect>
+        <x>146</x>
+        <y>62</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>255</number>
+      </property>
+      <property name="maximum">
+       <number>10000</number>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidgetIlumina">
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_4">
+    <widget class="QGroupBox" name="groupIlumina">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>0</y>
+       <width>178</width>
+       <height>195</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Iluminación</string>
+     </property>
+     <widget class="QRadioButton" name="radioGradiente">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mag. del Gradiente</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioSegDerivada">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Seg. Derivada</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioMagYSeg">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mag. del Grad. y Seg. Der.</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="radioBlinnPhong">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>82</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Blinn–Phong</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Lambiental">
+      <property name="geometry">
+       <rect>
+        <x>3</x>
+        <y>120</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string>Ambiental</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Ldifusa">
+      <property name="geometry">
+       <rect>
+        <x>63</x>
+        <y>120</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string>Difusa</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Lespecular">
+      <property name="geometry">
+       <rect>
+        <x>123</x>
+        <y>120</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string>Especular</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushAmbiental">
+      <property name="geometry">
+       <rect>
+        <x>3</x>
+        <y>150</y>
+        <width>51</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushDifusa">
+      <property name="geometry">
+       <rect>
+        <x>63</x>
+        <y>150</y>
+        <width>51</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushEspecular">
+      <property name="geometry">
+       <rect>
+        <x>123</x>
+        <y>150</y>
+        <width>51</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>170</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Exp. Refl. Especular:</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="doubleSpinShinIlumina">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>168</y>
+        <width>62</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="value">
+       <double>20.000000000000000</double>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <action name="actionAbrir_PVM">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/abrirVol.gif</normaloff>iconos/abrirVol.gif</iconset>
+   </property>
+   <property name="text">
+    <string>Abrir PVM</string>
+   </property>
+  </action>
+  <action name="actionMostrarBox">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/mostrar.jpeg</normaloff>iconos/mostrar.jpeg</iconset>
+   </property>
+   <property name="text">
+    <string>Mostrar</string>
+   </property>
+  </action>
+  <action name="actionColorBox">
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/color.jpeg</normaloff>iconos/color.jpeg</iconset>
+   </property>
+   <property name="text">
+    <string>Color</string>
+   </property>
+  </action>
+  <action name="actionMostrarFTM">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Mostrar 3D</string>
+   </property>
+  </action>
+  <action name="actionDif_Centrales">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dif. Centrales</string>
+   </property>
+  </action>
+  <action name="actionKernels">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Kernels</string>
+   </property>
+  </action>
+  <action name="actionPropiedades">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/propiedades.gif</normaloff>iconos/propiedades.gif</iconset>
+   </property>
+   <property name="text">
+    <string>Propiedades</string>
+   </property>
+  </action>
+  <action name="actionPropiedadesVol">
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/propiedades.gif</normaloff>iconos/propiedades.gif</iconset>
+   </property>
+   <property name="text">
+    <string>Propiedades</string>
+   </property>
+  </action>
+  <action name="actionMoverIlu">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/mover.jpeg</normaloff>iconos/mover.jpeg</iconset>
+   </property>
+   <property name="text">
+    <string>Mover</string>
+   </property>
+  </action>
+  <action name="actionPropiedadesIlu">
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/propiedades.gif</normaloff>iconos/propiedades.gif</iconset>
+   </property>
+   <property name="text">
+    <string>Propiedades</string>
+   </property>
+  </action>
+  <action name="actionActivarIlu">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Activar</string>
+   </property>
+  </action>
+  <action name="actionLaplaciano">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Laplaciano</string>
+   </property>
+  </action>
+  <action name="actionGrad_del_Grad">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Grad. del Grad.</string>
+   </property>
+  </action>
+  <action name="actionM_Hessian">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>M. Hessian</string>
+   </property>
+  </action>
+  <action name="actionAbrir_FTs">
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/abrirFT.gif</normaloff>iconos/abrirFT.gif</iconset>
+   </property>
+   <property name="text">
+    <string>Abrir FTs</string>
+   </property>
+  </action>
+  <action name="actionAbrir_TexturasVol">
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/abrirTexVol.gif</normaloff>iconos/abrirTexVol.gif</iconset>
+   </property>
+   <property name="text">
+    <string>Abrir TexturasVol</string>
+   </property>
+  </action>
+  <action name="actionGuardar_FTs">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/guardarFT.gif</normaloff>iconos/guardarFT.gif</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar FTs</string>
+   </property>
+  </action>
+  <action name="actionGuardar_TexturasVol">
+   <property name="icon">
+    <iconset>
+     <normaloff>iconos/guardarTexVol.gif</normaloff>iconos/guardarTexVol.gif</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar TexturasVol</string>
+   </property>
+  </action>
+  <action name="actionMostrar_WidgetFTM">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Mostrar Widget</string>
+   </property>
+  </action>
+  <action name="actionMostrar_WidgetFTuni">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Mostrar Widget</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>pantalla</class>
+   <extends>QWidget</extends>
+   <header>pantalla.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>pintaFT</class>
+   <extends>QWidget</extends>
+   <header>pintaft.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>pintaFTSeg</class>
+   <extends>QWidget</extends>
+   <header>pintaftseg.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ejeLinea</class>
+   <extends>QWidget</extends>
+   <header>ejeLinea.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>conFigClasi</class>
+   <extends>QWidget</extends>
+   <header>configclasi.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>colorLabel</class>
+   <extends>QLabel</extends>
+   <header>colorlabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>pintaFTUni</class>
+   <extends>QWidget</extends>
+   <header location="global">pintaFTUni.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="ftm.qrc"/>
+ </resources>
+ <connections/>
+</ui>

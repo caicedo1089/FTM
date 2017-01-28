@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="circuloClasi" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAQgAAAAIBAAABAAgAAACAAA=</HashCode>
+      <FileName>circuloClasi.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clasificaFig" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEABAAEAAAIAAACAAAAAAAgQAAAIBAQABAAgABBEAAE=</HashCode>
+      <FileName>clasificaFig.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="colorLabel" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAABAAAAAAAAAAAAAAAAQQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>colorlabel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="conFigClasi" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAABAAAAABAAAIABAAAAQAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>configclasi.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ejeLinea" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAABAIAIABAAAAABQAAAQAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>ejeLinea.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FTM" Collapsed="true">
+    <Position X="3.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JJNAAgCIBAkAOow0IhkwI6EkQBAAJSChkgrCX0DA4EA=</HashCode>
+      <FileName>ftm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FunctionTrans">
+    <Position X="10.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAlEaJHQiAAgRYBggAhEEIASARwCZRACjUQFQDEA=</HashCode>
+      <FileName>FunctionTrans.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Matrix" Collapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAgAAAAAAAAAAIAEAAAASAAAgACIEAEAQAAAAQAA=</HashCode>
+      <FileName>Matrix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pantalla" Collapsed="true">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>WBAAmIhojAB6IATCJy2AAQRAIAMQCoAAEJCxDAQCgIQ=</HashCode>
+      <FileName>pantalla.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pintaFT" Collapsed="true">
+    <Position X="3.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggIAAgCAQERiIAAIhcAAAEBAgAAQACAAABEAEAIQQAA=</HashCode>
+      <FileName>pintaFT.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pintaFTSeg" Collapsed="true">
+    <Position X="8.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>giIAAgCAQERiIAAIhYAAAUBAgQAQACEAAAEAAAJQQAA=</HashCode>
+      <FileName>pintaftseg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pintaFTUni" Collapsed="true">
+    <Position X="7.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEgAgAACAABAAAAABAIAAABQAAAQAEAAAAAAAAQAAEA=</HashCode>
+      <FileName>pintaFTUni.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Quaternion" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAIAAAAAAAAAAAAAAAAAAAAAAAhgAQAQAgA=</HashCode>
+      <FileName>Quaternion.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="rectanguloClasi" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAIAAAAABAAAAAgAAAAIBAAABAAgAAAAAAA=</HashCode>
+      <FileName>rectanguloClasi.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shader" Collapsed="true">
+    <Position X="7.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QACFAEAAAAABABAAAQMCAASIAQAAAAGIAJABAAEAAAE=</HashCode>
+      <FileName>Shader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Box" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAIAAAAAAAAAoAAAIAA=</HashCode>
+      <FileName>Textura3d.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Textura3d" Collapsed="true">
+    <Position X="6.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAABEQAAAAADAAAAAAAABAAAAAAAABEAABgDAAAA=</HashCode>
+      <FileName>Textura3d.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="trianguloClasi" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAIAAAAAAAAAAAgAAAAIBAAIBAAgAAAAAAA=</HashCode>
+      <FileName>trianguloClasi.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui_FTMClass" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>79dBiswE7vERSNESdy5SAsPYRiVZIpCIobJlCxBUQDM=</HashCode>
+      <FileName>GeneratedFiles\ui_ftm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ui::FTMClass" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedFiles\ui_ftm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
